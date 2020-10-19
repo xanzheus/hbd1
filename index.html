@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Selamat Ulang Tahun</title>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,800">
+	<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+	<style type="text/css">
+		
+*{
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+		@media screen and (max-width: 650px) {
+
+			body{
+				margin: 0;
+				padding: 0;
+				background-color: #ffe2e2;
+				display: -webkit-box;
+				display: -ms-flexbox;
+				display: flex;
+				-webkit-box-pack: center;
+				    -ms-flex-pack: center;
+				        justify-content: center;
+				-webkit-box-align: center;
+				    -ms-flex-align: center;
+				        align-items: center;	
+				min-height: 100vh;
+				overflow: hidden;
+				position: relative;
+				
+			}
+
+			.click-me{
+				display: block;
+				padding: 22px 48px;
+				color: #f4f4f4;
+				font-family: 'Montserrat';
+				font-weight: 600;
+				font-size: 25px;
+				letter-spacing: .5px;
+				text-decoration: none;
+				border-radius: 28px;
+				background-color: #efbbcf;
+				cursor: pointer;
+			}
+			.overlay{
+				position: absolute;
+				top:0;
+				left: 0;
+				overflow: hidden;
+				background-image: -o-linear-gradient( 47deg,  rgba(178,253,238,0.96) -8.1%, rgba(207,244,254,1) 26.3%, rgba(207,244,254,0.9) 47.5%, rgba(254,219,243,0.9) 61.5%, rgba(254,219,243,1) 78.7%, rgba(254,207,210,1) 109.2% );
+				background-image: linear-gradient( 43deg,  rgba(178,253,238,0.96) -8.1%, rgba(207,244,254,1) 26.3%, rgba(207,244,254,0.9) 47.5%, rgba(254,219,243,0.9) 61.5%, rgba(254,219,243,1) 78.7%, rgba(254,207,210,1) 109.2% );
+			}
+
+			.birthday{ 
+				min-height: 100vh;
+				position: relative;
+				-webkit-transition: 0.3s ease;
+				-o-transition: 0.3s ease;
+				transition: 0.3s ease;
+				opacity: 0;
+			 }
+			.birthday-tittle{
+				position: absolute;
+				top: 20%;
+				width: 100%;
+				padding: 0 10px;
+				z-index: 1;
+				opacity: 0;
+				-webkit-transition: .8s ease;
+				-o-transition: .8s ease;
+				transition: .8s ease;
+				-webkit-transition-delay: 3.1s;
+				     -o-transition-delay: 3.1s;
+				        transition-delay: 3.1s;
+			}
+			.birthday-img{
+				position: absolute;
+				top: 0%;
+				width: 100%;
+				padding: 0;
+				min-height: 100vh;
+				
+			}
+
+			.birthday-tittle h1{ 
+				font-family: 'Pacifico';
+				letter-spacing: .3px;
+				font-size: 40px;
+				text-transform: capitalize;
+				margin: 0 13px;
+				line-height: 1.3;
+				color: #e6739f;
+				text-shadow: 2px 2px 3px #ffe2e2, 2px 3px 6px #ffe2e2, 2px 3px 9px #fff;
+
+			 }
+			 .birthday-img span{ 
+			 	font-family: 'Pacifico';
+			 	font-size: 85px;
+			 	font-weight: 600;
+			 	font-style: italic;
+			 	letter-spacing: -0.5px;
+			 	position: absolute;
+			 	top: 62%;
+			 	left: 34%;
+			 	color: #f6f6f6;
+				text-shadow: 2px 2px 3px #de4463;
+				opacity: 0;
+				-webkit-transition: 0.8s;
+				-o-transition: 0.8s;
+				transition: 0.8s;
+				-webkit-transition-delay: 4.5s;
+				     -o-transition-delay: 4.5s;
+				        transition-delay: 4.5s;
+			 }	
+
+			 .birthday-img span::after{ 
+			 	content: 'th';
+			 	font-size: 25px;
+			 	font-weight: 400;
+			 }
+
+			.birthday-img #balon{ 
+				max-width: 100%; 
+				position: absolute;
+				-webkit-transition: 3s ease;
+				-o-transition: 3s ease;
+				transition: 3s ease;
+				-webkit-transform: translateY(120%);
+				    -ms-transform: translateY(120%);
+				        transform: translateY(120%);
+			}
+
+			.birthday-img #love{
+				position: absolute;
+				top: 46%;
+				left: 8%;
+				max-width: 83%;
+				opacity: 0;
+				-webkit-transform: scale(0);
+				    -ms-transform: scale(0);
+				        transform: scale(0);
+				-webkit-transition: 1s;
+				-o-transition: 1s;
+				transition: 1s;
+				-webkit-transition-delay: 3.8s;
+				     -o-transition-delay: 3.8s;
+				        transition-delay: 3.8s;
+			}
+			.birthday-img #lisna{
+				position: absolute;
+				top: 55%;
+				left: 26%;
+				max-width: 175px;
+				opacity: 0;
+				-webkit-transform: scale(0.5);
+				    -ms-transform: scale(0.5);
+				        transform: scale(0.5);
+				-webkit-transition: 1s ease;
+				-o-transition: 1s ease;
+				transition: 1s ease;
+				-webkit-transition-delay: 3.8s;
+				     -o-transition-delay: 3.8s;
+				        transition-delay: 3.8s;
+			}
+			#bokeh{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				min-height: 100vh;
+				opacity: 0.6;
+				-webkit-filter: blur(2px);
+				        filter: blur(2px);
+			}
+			.birthday h2{
+				font-family: 'Montserrat';
+				font-size: 30px;
+				position: absolute;
+				top: 88%;
+			}
+
+			.click-capt{
+				position: absolute;
+				bottom: 0%;
+				left: 35%;
+				opacity: 0;
+				-webkit-animation: fadeIn 0.8s ease forwards;
+				        animation: fadeIn 0.8s ease forwards;
+				-webkit-animation-delay: 6.5s;
+				        animation-delay: 6.5s;
+			}
+
+			.click-me.capt{
+				padding: 8px 12px;
+				font-size: 18px;
+				border:none;
+			}
+
+			.caption{
+				display: none;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				padding: 0 16px;
+				z-index: 999;
+				background-color: #f6f6f6;
+				-webkit-transition: 0.8s ease;
+				-o-transition: 0.8s ease;
+				transition: 0.8s ease;
+			}
+			.caption p{
+				font-family: 'Montserrat';
+				font-size: 13px;
+			}
+
+			.caption p:last-child {
+				text-align: right;
+			}
+
+			.caption .close{
+				position: absolute;
+				top: -22%;
+				right: 1%;
+			}
+			.caption .close button{
+				font-size: 25px;
+				border: none;
+				background-color: transparent;
+			}
+			.caption .close button::before{
+				content: 'close';
+				font-size: 12px;
+				font-family: 'Montserrat';
+				vertical-align: middle;
+			}
+
+
+			.overlay:target {
+				right: 0;
+				bottom: 0;
+			}
+			.overlay:target .birthday{
+				opacity: 1;
+			}
+			.overlay:target .birthday-img #balon{
+				-webkit-transform: translateY(-59%);
+				    -ms-transform: translateY(-59%);
+				        transform: translateY(-59%);
+				-webkit-animation: skew 2s ease infinite;
+				        animation: skew 2s ease infinite;
+				-webkit-animation-delay: 3.2s;
+				        animation-delay: 3.2s;
+			}
+			.overlay:target .birthday-img #love{
+				opacity: 1;
+				-webkit-transform: scale(1);
+				    -ms-transform: scale(1);
+				        transform: scale(1);
+				-webkit-animation: scale 1.5s ease infinite;
+				        animation: scale 1.5s ease infinite;
+				-webkit-animation-delay: 4.4s;
+				        animation-delay: 4.4s;
+			}
+			.overlay:target .birthday-tittle{
+				top: 24%;
+				opacity: 1;
+			}
+			.overlay:target .birthday-img #lisna{
+				opacity: 1;
+				top: 40%;
+				-webkit-transform: scale(1);
+				    -ms-transform: scale(1);
+				        transform: scale(1);
+			}
+			.overlay:target .birthday-img span{
+				opacity: 1;
+				top: 68%;
+			}
+		}
+
+		@-webkit-keyframes skew {
+			 0%   { -webkit-transform: skewX(0deg); transform: skewX(0deg); top: -32%;}
+			  50% { -webkit-transform: skewX(-2deg); transform: skewX(-2deg); top: -31%;}
+			  100% { -webkit-transform: skewX(0deg); transform: skewX(0deg);  top: -32%;}
+		}
+
+		@keyframes skew {
+			 0%   { -webkit-transform: skewX(0deg); transform: skewX(0deg); top: -32%;}
+			  50% { -webkit-transform: skewX(-2deg); transform: skewX(-2deg); top: -31%;}
+			  100% { -webkit-transform: skewX(0deg); transform: skewX(0deg);  top: -32%;}
+		}
+
+		@-webkit-keyframes scale {
+			0%   { -webkit-transform:scale(0.9); transform:scale(0.9); }
+			50% { -webkit-transform:scale(1); transform:scale(1); }
+			100% { -webkit-transform:scale(0.9); transform:scale(0.9);}
+		}
+
+		@keyframes scale {
+			0%   { -webkit-transform:scale(0.9); transform:scale(0.9); }
+			50% { -webkit-transform:scale(1); transform:scale(1); }
+			100% { -webkit-transform:scale(0.9); transform:scale(0.9);}
+		}
+		@-webkit-keyframes rotate {
+			0%   { -webkit-transform:rotateX(5deg); transform:rotateX(5deg);}
+			50% {  -webkit-transform:rotateX(-20deg);  transform:rotateX(-20deg); }
+			100% {  -webkit-transform:rotateX(5deg);  transform:rotateX(5deg); }
+		}
+		@keyframes rotate {
+			0%   { -webkit-transform:rotateX(5deg); transform:rotateX(5deg);}
+			50% {  -webkit-transform:rotateX(-20deg);  transform:rotateX(-20deg); }
+			100% {  -webkit-transform:rotateX(5deg);  transform:rotateX(5deg); }
+		}
+		@-webkit-keyframes fadeIn {
+			from { 
+				opacity: 0; 
+				bottom: 0;
+			} to{
+				opacity: 1; 
+				bottom: 3%;
+			}
+		}
+		@keyframes fadeIn {
+			from { 
+				opacity: 0; 
+				bottom: 0;
+			} to{
+				opacity: 1; 
+				bottom: 3%;
+			}
+		}
+		
+	</style>
+</head>
+<body>
+	<section class="window">
+		<div class="click">
+			<a href="#target" class="click-me">Klik ini!</a>
+		</div>
+		<div class="overlay" id="target">
+			<div class="birthday">
+				<div class="birthday-tittle">
+					<h1>Selamat Ulang Tahun</h1>
+				</div>
+				<div class="birthday-img">
+					<img id="balon" src="img/Balloons.png" alt="balon">
+					<img id="love" src="img/love.png" alt="love">
+					<img id="lisna" src="img/lisna.png" alt="Photo">
+					<span>23</span>
+				</div>
+				<img id="bokeh" src="img/Bokeh.png" alt="bokeh">
+			</div>
+		</div>
+		<div class="click-capt">
+			<button class="click-me capt" onclick="caption()">Klik lagi!</button>
+		</div>
+		<div class="caption" id="caption">
+			<div class="close">
+				<button onclick="closeCaption()">&#10006;</button>
+			</div>
+			<p>Tetaplah berjuang dan jangan pernah menyerah. Meski kini umurmu semakin lama semakin bertambah, tetapi semangat haruslah semakin membahana agar hidupmu semakin bermakna. Semoga apa yg selalu kita panjatkan dalam doa segera terwujud ya sayang.</p>
+			<p>from, Kesayanganmu <span>&#128149;</span></p>
+		</div>
+	</section>
+	
+	<script>
+		function caption() {
+			var x = document.getElementById('caption');
+			x.style.display='block';
+		}
+		function closeCaption() {
+			var z = document.getElementById('caption');
+			z.style.display='none';
+		}
+	</script>
+
+</body>
+</html>
