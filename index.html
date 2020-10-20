@@ -152,8 +152,8 @@
 			.birthday-img #lisna{
 				position: absolute;
 				top: 55%;
-				left: 26%;
-				max-width: 175px;
+				left: 20%;
+				max-width: 235px;
 				opacity: 0;
 				-webkit-transform: scale(0.5);
 				    -ms-transform: scale(0.5);
@@ -182,18 +182,20 @@
 				top: 88%;
 			}
 
-			.click-capt{
+			.overlay .click-capt{
 				position: absolute;
 				bottom: 0%;
 				left: 35%;
 				opacity: 0;
-				-webkit-animation: fadeIn 0.8s ease forwards;
-				        animation: fadeIn 0.8s ease forwards;
-				-webkit-animation-delay: 6.5s;
-				        animation-delay: 6.5s;
+				-webkit-transition: 0.8s;
+				-o-transition: 0.8s;
+				transition: 0.8s;
+				-webkit-transition-delay: 6.5s;
+				     -o-transition-delay: 6.5s;
+				        transition-delay: 6.5s;
 			}
 
-			.click-me.capt{
+			.overlay .click-capt .click-me.capt{
 				padding: 8px 12px;
 				font-size: 18px;
 				border:none;
@@ -279,6 +281,10 @@
 				opacity: 1;
 				top: 68%;
 			}
+			.overlay:target .click-capt{
+				opacity: 1;
+				bottom: 3%;
+			}
 		}
 
 		@-webkit-keyframes skew {
@@ -353,10 +359,11 @@
 				</div>
 				<img id="bokeh" src="img/Bokeh.png" alt="bokeh">
 			</div>
+			<div class="click-capt">
+				<button class="click-me capt" onclick="caption()">Klik lagi!</button>
+			</div>
 		</div>
-		<div class="click-capt">
-			<button class="click-me capt" onclick="caption()">Klik lagi!</button>
-		</div>
+		
 		<div class="caption" id="caption">
 			<div class="close">
 				<button onclick="closeCaption()">&#10006;</button>
